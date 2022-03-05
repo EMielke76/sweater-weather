@@ -9,7 +9,7 @@ RSpec.describe ForcastService do
           long = -104.984853
 
           query = ForcastService.new
-          results = query.forecast(lat, long)
+          results = query.forcast(lat, long)
 
           expect(results).to be_a(Hash)
           expect(results).to have_key(:current)
