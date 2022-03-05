@@ -33,7 +33,7 @@ RSpec.describe Forecast do
       time: "2022-03-05 14:17:26.650002 -0700",
       temperature: 123.45,
       conditions: "Badass",
-      :icon: "10d"
+      icon: "10d"
     }]
   }
 
@@ -46,16 +46,16 @@ RSpec.describe Forecast do
   describe 'attributes' do
     it 'has current weather' do
       expect(forecast.current_weather).to be_a(Hash)
-      expect(forecast.curent_weather).to have_key(:datetime)
-      expect(forecast.curent_weather).to have_key(:sunrise)
-      expect(forecast.curent_weather).to have_key(:sunset)
-      expect(forecast.curent_weather).to have_key(:temperature)
-      expect(forecast.curent_weather).to have_key(:feels_like)
-      expect(forecast.curent_weather).to have_key(:humidity)
-      expect(forecast.curent_weather).to have_key(:uvi)
-      expect(forecast.curent_weather).to have_key(:visibility)
-      expect(forecast.curent_weather).to have_key(:conditions)
-      expect(forecast.curent_weather).to have_key(:icon)
+      expect(forecast.current_weather).to have_key(:datetime)
+      expect(forecast.current_weather).to have_key(:sunrise)
+      expect(forecast.current_weather).to have_key(:sunset)
+      expect(forecast.current_weather).to have_key(:temperature)
+      expect(forecast.current_weather).to have_key(:feels_like)
+      expect(forecast.current_weather).to have_key(:humidity)
+      expect(forecast.current_weather).to have_key(:uvi)
+      expect(forecast.current_weather).to have_key(:visibility)
+      expect(forecast.current_weather).to have_key(:conditions)
+      expect(forecast.current_weather).to have_key(:icon)
     end
 
     it 'has daily weather' do
@@ -74,9 +74,9 @@ RSpec.describe Forecast do
 
     it 'has hourly weather' do
       expect(forecast.hourly_weather).to be_a(Array)
-      expect(forecast.hourley_weather.first).to be_a(Hash)
+      expect(forecast.hourly_weather.first).to be_a(Hash)
 
-      first = forecast.hourley_weather.first
+      first = forecast.hourly_weather.first
       expect(first).to have_key(:time)
       expect(first).to have_key(:temperature)
       expect(first).to have_key(:conditions)
