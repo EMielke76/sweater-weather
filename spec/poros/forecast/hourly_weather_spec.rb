@@ -17,7 +17,7 @@ RSpec.describe HourlyWeather do
   end
 
   it 'has attributes' do
-    expect(weather.time).to eq("2022-03-05 11:00:00 -0700")
+    expect(weather.time).to eq("11:00:00")
     expect(weather.temperature).to eq(123.45)
     expect(weather.conditions).to eq("Badass")
     expect(weather.icon).to eq("10d")

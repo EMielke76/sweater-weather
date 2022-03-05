@@ -18,7 +18,7 @@ RSpec.describe Forecast do
 
   let!(:daily_weather) {
     [{
-      date: "2022-03-05 14:17:26.650002 -0700",
+      date: "2022-03-05",
       sunrise: "2022-03-05 14:17:26.650002 -0700",
       sunset: "2022-03-05 14:17:26.650002 -0700",
       max_temp: 123.45,
@@ -30,7 +30,7 @@ RSpec.describe Forecast do
 
   let!(:hourly_weather) {
     [{
-      time: "2022-03-05 14:17:26.650002 -0700",
+      time: "14:17:26",
       temperature: 123.45,
       conditions: "Badass",
       icon: "10d"

@@ -8,7 +8,7 @@ class DailyWeather
               :icon
 
   def initialize(attributes)
-    @date = Time.at(attributes[:dt]).to_s
+    @date = Time.at(attributes[:dt]).strftime("%Y-%m-%d")
     @sunrise = Time.at(attributes[:sunrise]).to_s
     @sunset = Time.at(attributes[:sunset]).to_s
     @max_temp = attributes[:temp][:max]
