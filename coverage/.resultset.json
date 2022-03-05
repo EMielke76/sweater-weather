@@ -1,15 +1,24 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/poros/geo_location.rb": {
+      "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/services/location_service.rb": {
         "lines": [
           1,
+          null,
+          1,
+          1,
           1,
           null,
           null,
           1,
-          2,
-          2,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
           null,
           null
         ]
@@ -54,6 +63,21 @@
       "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/poros/current_weather.rb": {
         "lines": [
 
+        ],
+        "branches": {
+        }
+      },
+      "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/poros/geo_location.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0
         ],
         "branches": {
         }
@@ -115,6 +139,6 @@
         }
       }
     },
-    "timestamp": 1646511002
+    "timestamp": 1646512115
   }
 }
