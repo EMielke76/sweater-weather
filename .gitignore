@@ -22,7 +22,7 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-/coverafge
+/coverage
 
 # Ignore application configuration
 /config/application.yml
