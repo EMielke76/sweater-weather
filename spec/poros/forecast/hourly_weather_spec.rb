@@ -5,8 +5,8 @@ RSpec.describe HourlyWeather do
     {
       dt: 1646503200,
       temp: 123.45,
-      weather: { description: "Badass",
-                  icon: "10d"}
+      weather: [{ description: "Badass",
+                  icon: "10d"}]
     }
   }
 
