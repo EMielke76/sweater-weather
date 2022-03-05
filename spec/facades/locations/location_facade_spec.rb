@@ -7,7 +7,7 @@ RSpec.describe LocationFacade do
         location = "Denver,CO"
         query = LocationFacade.new
         results = query.get_lat_long(location)
-        require "pry"; binding.pry
+        
         expect(results).to be_a(GeoLocation)
       end
     end
