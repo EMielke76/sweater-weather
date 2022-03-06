@@ -44,6 +44,11 @@ RSpec.describe Forecast do
   end
 
   describe 'attributes' do
+    
+    it 'has nil id' do
+      expect(forecast.id).to eq(nil)
+    end
+
     it 'has current weather' do
       expect(forecast.current_weather).to be_a(Hash)
       expect(forecast.current_weather).to have_key(:datetime)
