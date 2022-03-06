@@ -1,15 +1,15 @@
 require 'rails_helper'
 
-RSpec.describe ForcastService do
+RSpec.describe ForecastService do
   context 'instance methods' do
-    context '#forcast' do
+    context '#forecast' do
       it 'returns weather data' do
         VCR.use_cassette('denver-forcast') do
           lat = 39.738453
           long = -104.984853
 
-          query = ForcastService.new
-          results = query.forcast(lat, long)
+          query = ForecastService.new
+          results = query.forecast(lat, long)
 
           expect(results).to be_a(Hash)
           expect(results).to have_key(:current)
