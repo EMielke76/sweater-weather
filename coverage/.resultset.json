@@ -1,6 +1,66 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/controllers/api/v1/forecast_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/controllers/concerns/response.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/facades/location_facade.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/poros/geo_location.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/services/location_service.rb": {
         "lines": [
           1,
@@ -17,6 +77,147 @@
           null,
           null,
           null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/serializers/forecast_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/facades/forecast_facade.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          5,
+          null,
+          1,
+          8,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/services/forecast_service.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/poros/current_weather.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/poros/daily_weather.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          null,
+          null
+        ]
+      },
+      "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/poros/hourly_weather.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          8,
+          8,
+          8,
+          8,
+          null,
+          null
+        ]
+      },
+      "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/poros/forecast.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
           1,
           1,
           null,
@@ -60,68 +261,6 @@
         "branches": {
         }
       },
-      "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/poros/current_weather.rb": {
-        "lines": [
-
-        ],
-        "branches": {
-        }
-      },
-      "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/poros/geo_location.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/poros/forecast.rb": {
-        "lines": [
-
-        ],
-        "branches": {
-        }
-      },
-      "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/poros/hourly_weather.rb": {
-        "lines": [
-
-        ],
-        "branches": {
-        }
-      },
-      "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/poros/daily_weather.rb": {
-        "lines": [
-
-        ],
-        "branches": {
-        }
-      },
-      "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/controllers/application_controller.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/controllers/api/v1/forecast/forcasts_controller.rb": {
-        "lines": [
-          0,
-          null,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/controllers/api/v1/users/users_controller.rb": {
         "lines": [
           0,
@@ -139,6 +278,6 @@
         }
       }
     },
-    "timestamp": 1646512115
+    "timestamp": 1646606656
   }
 }

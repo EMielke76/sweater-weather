@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe LocationService do
-  context 'class methods' do
+  context 'instance methods' do
     context '#get_lat_long' do
       it 'returns location data' do
         VCR.use_cassette('denver-lat-long') do
