@@ -6,7 +6,7 @@ RSpec.describe BackgroundService do
       it 'returns image data' do
         VCR.use_cassette('-denver-image-search') do
           location = "denver,co"
-          query = BackgrounService.new
+          query = BackgroundService.new
           results = query.get_image(location)
 
           expect(results).to be_a(Hash)
@@ -22,7 +22,7 @@ RSpec.describe BackgroundService do
           expect(photo[:photographer]).to be_a(String)
 
           expect(photo).to have_key(:photographer_url)
-          expect(photo[:photographer_url]).to be_a(String)  
+          expect(photo[:photographer_url]).to be_a(String)
         end
       end
     end
