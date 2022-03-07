@@ -8,4 +8,14 @@ RSpec.describe User do
     it { should have_secure_password }
   end
 
+  describe 'instance methods' do
+    context '#generate_api_key' do
+      it 'generates an api key' do
+        bob = User.create!(email: "bobbarker@faker.net", password: "123fake", password_confirmation:"123fake")
+        bob.generate_api_key
+        expect(bob.api_key).to be_a(String)
+      end
+    end
+  end
+
 end
