@@ -66,4 +66,26 @@ RSpec.describe "BookSearch endpoint" do
       end
     end
   end
+
+  context 'sad path' do
+    it 'returns 400 if parameters are missing' do
+      VCR.use_cassette('missing-location') do
+        quantity = 5
+
+        get "/api/v1/book-search?location=#{location}&quantity=#{quantity}"
+
+        results = JSON.parse(response.body, symbolize_names: true)
+
+        expect(response).to have_http_status(400)
+        expect(results).to have_key(:data)
+        expect(reuls[:data]).to eq({})
+
+        expect(results).to have_key(:status)
+        expect(results[:status]).to eq("ERROR")
+
+        expect(results).to have_key(:message)
+        expect(results[:message]).to eq("No location specified")
+      end
+    end
+  end
 end
