@@ -6,7 +6,7 @@ RSpec.describe BackgroundFacade do
       it 'returns Image data', :vcr do
         location = 'denver,co'
         query = BackgroundFacade.new
-        results = query.get_image(image)
+        results = query.get_image(location)
 
         expect(results).to be_a(Image)
       end
