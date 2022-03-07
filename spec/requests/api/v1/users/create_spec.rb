@@ -6,9 +6,11 @@ RSpec.describe "Registering a user" do
       VCR.use_cassette('registering-a-user') do
         headers = { 'CONTENT_TYPE' => 'application/json' }
         params = {
-          "email"=>"faker@notreal.net",
-           "password"=>"123ThisIsFake",
-           "password_confirmation"=>"123ThisIsFake",
+          "user"=> {
+             "email"=>"faker@notreal.net",
+             "password"=>"123ThisIsFake",
+             "password_confirmation"=>"123ThisIsFake"
+            }
           }
 
         post "/api/v1/users", headers: headers, params: JSON.generate(params)
@@ -48,9 +50,11 @@ RSpec.describe "Registering a user" do
 
         headers = { 'CONTENT_TYPE' => 'application/json' }
         params = {
-          "email"=>"faker@notreal.net",
-           "password"=>"123ThisIsFake",
-           "password_confirmation"=>"123ThisIsFake",
+          "user"=> {
+             "email"=>"faker@notreal.net",
+             "password"=>"123ThisIsFake",
+             "password_confirmation"=>"123ThisIsFake"
+            }
           }
 
         post "/api/v1/users", headers: headers, params: JSON.generate(params)
@@ -72,15 +76,17 @@ RSpec.describe "Registering a user" do
     it 'returns an error is passowords do not match' do
       VCR.use_cassette('passwords-do-not-match') do
         headers = { 'CONTENT_TYPE' => 'application/json' }
-        params = {
-          "email"=>"faker@notreal.net",
-           "password"=>"123ThisIsFake",
-           "password_confirmation"=>"123ThisIsReal",
+        params = params = {
+          "user"=> {
+             "email"=>"faker@notreal.net",
+             "password"=>"123ThisIsFake",
+             "password_confirmation"=>"123ThisIsReal"
+            }
           }
 
         post "/api/v1/users", headers: headers, params: JSON.generate(params)
         results = JSON.parse(response.body, symbolize_names: true)
-        
+
         expect(response).to have_http_status(400)
 
         expect(results).to have_key(:status)
