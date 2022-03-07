@@ -26,7 +26,6 @@ RSpec.describe Book do
   end
 
   it 'has attributes' do
-    expect(book.id).to eq(nil)
     expect(book.title).to eq("Denver")
     expect(book.publisher).to eq(["Crescent Books", "Random House Value Publishing", "Distributed by Crown Publishers", "Crescent"])
     expect(book.isbn).to eq(["0517215039", "9780517623619", "9780517215036", "0517623617"])
