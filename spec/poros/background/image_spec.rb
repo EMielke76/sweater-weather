@@ -15,6 +15,7 @@ RSpec.describe Image do
   end
 
   it 'has attributes' do
+    expect(photo.id).to eq(nil)
     expect(photo.url).to eq("https://www.pexels.com/photo/red-and-white-concrete-building-during-night-time-3751010/")
     expect(photo.photographer).to eq("Colin Lloyd")
     expect(photo.photographer_url).to eq("https://www.pexels.com/@colin-lloyd-2120291")
