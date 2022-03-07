@@ -15,7 +15,7 @@ class Api::V1::UsersController < ApplicationController
   private
   #in headers, 'Authorization: Token token=apikey'
   def user_params
-    params.permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:email, :password, :password_confirmation)
   end
 
   def restrict_access
