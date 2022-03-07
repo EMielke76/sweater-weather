@@ -13,7 +13,7 @@ RSpec.describe LibraryService do
 
           expect(results).to be_a(Hash)
           expect(results).to have_key(:numFound)
-          expect(reults[:num_found]).to be_a(Integer)
+          expect(results[:numFound]).to be_a(Integer)
 
           expect(results).to have_key(:docs)
           expect(results[:docs]).to be_a(Array)
