@@ -10,7 +10,7 @@ class BooksSerializer
                   destination: location,
                   forecast: forecast(data),
                   total_books_found: data[:count],
-                  books: data[:book]
+                  books: data[:books]
                           }
               }
       }
@@ -18,8 +18,8 @@ class BooksSerializer
 
     def forecast(data)
       {
-        summary: data[:weather].first.conditions,
-        temperature: data[:weather].first.temperature
+        summary: data[:weather].current_weather.conditions,
+        temperature: data[:weather].current_weather.temperature
       }
     end
   end
