@@ -7,6 +7,10 @@ class Api::V1::BookSearchController < ApplicationController
 
   private
   def set_data
+    if params[:quantity].nil? || params[:quantity] == ""
+      params[:quantity] = 5
+    end
+    
     if params[:location].nil? || params[:location] == ""
       render json: { status: 'ERROR', message: "No location specified", data: {}}, status: :bad_request
     else
@@ -16,6 +20,6 @@ class Api::V1::BookSearchController < ApplicationController
         books: LibraryFacade.new.make_books(params[:location], params[:quantity]),
         weather: ForecastFacade.new.forecast(location.lat, location.long)
       }
-    end 
+    end
   end
 end
