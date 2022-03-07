@@ -1,4 +1,4 @@
-requrie 'rails_helper'
+require 'rails_helper'
 
 RSpec.describe "BookSearch endpoint" do
   context 'happy path' do
@@ -14,16 +14,21 @@ RSpec.describe "BookSearch endpoint" do
         expect(response).to have_http_status(200)
 
         expect(results).to be_a(Hash)
-        expect(results).to have_key(:id)
-        expect(results[:id]).to eq(nil)
+        expect(results).to have_key(:data)
+        expect(results[:data]).to be_a(Hash)
 
-        expect(results).to have_key(:type)
-        expect(results[:type]).to eq("books")
+        data = results[:data]
 
-        expect(results).to have_key(:attributes)
-        expect(results[:attributes]).to be_a(Hash)
+        expect(data).to have_key(:id)
+        expect(data[:id]).to eq(nil)
 
-        attributes = results[:attributes]
+        expect(data).to have_key(:type)
+        expect(data[:type]).to eq("books")
+
+        expect(data).to have_key(:attributes)
+        expect(data[:attributes]).to be_a(Hash)
+
+        attributes = data[:attributes]
         expect(attributes).to have_key(:destination)
         expect(attributes[:destination]).to eq("#{location}")
 
@@ -57,7 +62,7 @@ RSpec.describe "BookSearch endpoint" do
         expect(book[:publisher]).to be_a(Array)
         book[:publisher].each do |pub|
           expect(pub).to be_a(String)
-        end 
+        end
       end
     end
   end
