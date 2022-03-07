@@ -25,17 +25,17 @@ RSpec.describe "Registering a user" do
         expect(data[:type]).to eq("users")
 
         expect(data).to have_key(:id)
-        expect(data[:id]).to be_a(Integer)
+        expect(data[:id]).to be_a(String)
 
         expect(data).to have_key(:attributes)
-        expect(data[:attribues]).to be_a(Hash)
+        expect(data[:attributes]).to be_a(Hash)
 
         attributes =  data[:attributes]
 
         expect(attributes).to have_key(:email)
         expect(attributes[:email]).to be_a(String)
 
-        expect(attribues).to have_key(:api_key)
+        expect(attributes).to have_key(:api_key)
         expect(attributes[:api_key]).to be_a(String)
       end
     end
