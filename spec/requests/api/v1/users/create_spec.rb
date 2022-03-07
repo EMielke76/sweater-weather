@@ -73,7 +73,34 @@ RSpec.describe "Registering a user" do
       end
     end
 
-    it 'returns an error is passowords do not match' do
+    it 'returns an error if email is empty' do
+      VCR.use_cassette('email-empty') do
+        headers = { 'CONTENT_TYPE' => 'application/json' }
+        params = params = {
+          "user"=> {
+             "email"=>"",
+             "password"=>"123Fake",
+             "password_confirmation"=>"123Fake"
+            }
+          }
+
+        post "/api/v1/users", headers: headers, params: JSON.generate(params)
+        results = JSON.parse(response.body, symbolize_names: true)
+
+        expect(response).to have_http_status(400)
+
+        expect(results).to have_key(:status)
+        expect(results[:status]).to eq(400)
+
+        expect(results).to have_key(:message)
+        expect(results[:message]).to eq("Email can't be blank")
+
+        expect(results).to have_key(:data)
+        expect(results[:data]).to eq({})
+      end
+    end
+
+    it 'returns an error is passwords do not match' do
       VCR.use_cassette('passwords-do-not-match') do
         headers = { 'CONTENT_TYPE' => 'application/json' }
         params = params = {
@@ -94,6 +121,33 @@ RSpec.describe "Registering a user" do
 
         expect(results).to have_key(:message)
         expect(results[:message]).to eq("Password confirmation doesn't match Password")
+
+        expect(results).to have_key(:data)
+        expect(results[:data]).to eq({})
+      end
+    end
+
+    it 'returns an error if passwords is empty' do
+      VCR.use_cassette('passwords-empty') do
+        headers = { 'CONTENT_TYPE' => 'application/json' }
+        params = params = {
+          "user"=> {
+             "email"=>"faker@notreal.net",
+             "password"=>"",
+             "password_confirmation"=>""
+            }
+          }
+
+        post "/api/v1/users", headers: headers, params: JSON.generate(params)
+        results = JSON.parse(response.body, symbolize_names: true)
+
+        expect(response).to have_http_status(400)
+
+        expect(results).to have_key(:status)
+        expect(results[:status]).to eq(400)
+
+        expect(results).to have_key(:message)
+        expect(results[:message]).to eq("Password digest can't be blank and Password can't be blank")
 
         expect(results).to have_key(:data)
         expect(results[:data]).to eq({})
