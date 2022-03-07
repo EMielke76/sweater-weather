@@ -5,6 +5,6 @@ class User < ApplicationRecord
   has_secure_password
 
   def generate_api_key
-    self.api_key = ApiKey.create.access_token
+    self.update(api_key: ApiKey.create.access_token)
   end
 end
