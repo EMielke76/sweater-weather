@@ -2,14 +2,26 @@ class ForecastFacade
   class << self
     def forecast(lat, long)
       cache = service.forecast(lat, long)
-      current = CurrentWeather.new(cache[:current])
-      daily = cache[:daily][0..4].map do |daily|
-                DailyWeather.new(daily)
-              end
-      hourly = cache[:hourly][0..7].map do |hourly|
-                HourlyWeather.new(hourly)
-              end
+      current = current_weather(cache[:current])
+      daily = daily_weather(cache[:daily][0..4])
+      hourly = hourly_weather(cache[:hourly][0..7])
       Forecast.new(current, daily, hourly)
+    end
+
+    def current_weather(attributes)
+      CurrentWeather.new(attributes)
+    end
+
+    def daily_weather(attributes)
+      attributes.map do |day|
+        DailyWeather.new(day)
+      end
+    end
+
+    def hourly_weather(attributes)
+      attributes.map do |hour|
+        HourlyWeather.new(hour)
+      end
     end
 
     def roadtrip(lat, long)
