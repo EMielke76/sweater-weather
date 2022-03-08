@@ -50,7 +50,7 @@ RSpec.describe LocationService do
           expect(result[:route]).to be_a(Hash)
 
           route = result[:route]
-          # require "pry"; binding.pry
+          
           expect(route).to have_key(:formattedTime)
           expect(route[:formattedTime]).to be_a(String)
 
