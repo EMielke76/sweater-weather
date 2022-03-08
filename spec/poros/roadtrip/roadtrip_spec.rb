@@ -16,8 +16,9 @@ RSpec.describe Roadtrip do
         }
         ]
     }
+  }
 
-  let!(roadtrip) { Roadtrip.new(attributes) }
+  let!(:roadtrip) { Roadtrip.new(attributes) }
 
   it 'exists' do
     expect(roadtrip).to be_a(Roadtrip)
@@ -28,6 +29,6 @@ RSpec.describe Roadtrip do
     expect(roadtrip.start_city).to eq("New York, NY")
     expect(roadtrip.end_city).to eq("Los Angeles, CA")
     expect(roadtrip.end_lat).to eq(34.052238)
-    expect(roactrup.end_long).to eq(-118.243344)
+    expect(roadtrip.end_long).to eq(-118.243344)
   end
 end
