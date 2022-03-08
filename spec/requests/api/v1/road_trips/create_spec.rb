@@ -3,14 +3,14 @@ require 'rails_helper'
 RSpec.describe 'Create a Road Trip endpoint' do
   context 'happy path' do
     it 'returns data on a planned roadtrip' do
-      VCR.use_cassette('NY-to-LA') do
+      VCR.use_cassette('LA-to-NY') do
         api_key = ApiKey.create
         user = User.create!(email: "faker@notreal.net", password: "123ThisIsFake", password_confirmation: "123ThisIsFake", api_key: api_key.access_token )
         headers = { 'CONTENT_TYPE' => 'application/json' }
         params = {
              "origin"=>"Los Angeles,CA",
              "destination"=>"New York,NY",
-             "api_key" => "#{api_key}"
+             "api_key" => "#{api_key.access_token}"
           }
 
         post '/api/v1/road_trip', headers: headers, params: JSON.generate(params)
@@ -64,21 +64,117 @@ RSpec.describe 'Create a Road Trip endpoint' do
   context 'sad path' do
     it 'returns an error if a starting point is not specified' do
       VCR.use_cassette('no-start') do
+        api_key = ApiKey.create
+        user = User.create!(email: "faker@notreal.net", password: "123ThisIsFake", password_confirmation: "123ThisIsFake", api_key: api_key.access_token )
+        headers = { 'CONTENT_TYPE' => 'application/json' }
+        params = {
+             "origin"=>"",
+             "destination"=>"New York,NY",
+             "api_key" => "#{api_key.access_token}"
+          }
+
+        post '/api/v1/road_trip', headers: headers, params: JSON.generate(params)
+
+        results = JSON.parse(response.body, symbolize_names: true)
+
+        expect(response).to have_http_status(400)
+
+        expect(results).to be_a(Hash)
+        expect(results).to have_key(:status)
+        expect(results[:status]).to eq("BAD REQUEST")
+
+        expect(results).to have_key(:message)
+        expect(results[:message]).to eq("Origin cannot be blank")
+
+        expect(results).to have_key(:data)
+        expect(results[:data]).to eq({})
       end
     end
 
     it 'returns an error if a destination is not specified' do
       VCR.use_cassette('no-end') do
+        api_key = ApiKey.create
+        user = User.create!(email: "faker@notreal.net", password: "123ThisIsFake", password_confirmation: "123ThisIsFake", api_key: api_key.access_token )
+        headers = { 'CONTENT_TYPE' => 'application/json' }
+        params = {
+             "origin"=>"Los Angeles,CA",
+             "destination"=>"",
+             "api_key" => "#{api_key.access_token}"
+          }
+
+        post '/api/v1/road_trip', headers: headers, params: JSON.generate(params)
+
+        results = JSON.parse(response.body, symbolize_names: true)
+
+        expect(response).to have_http_status(400)
+
+        expect(results).to be_a(Hash)
+        expect(results).to have_key(:status)
+        expect(results[:status]).to eq("BAD REQUEST")
+
+        expect(results).to have_key(:message)
+        expect(results[:message]).to eq("Destination cannot be blank")
+
+        expect(results).to have_key(:data)
+        expect(results[:data]).to eq({})
       end
     end
 
     it 'returns an error if no API key is included in the request' do
       VCR.use_cassette('no-api-key') do
+        api_key = ApiKey.create
+        user = User.create!(email: "faker@notreal.net", password: "123ThisIsFake", password_confirmation: "123ThisIsFake", api_key: api_key.access_token )
+        headers = { 'CONTENT_TYPE' => 'application/json' }
+        params = {
+             "origin"=>"Los Angeles,CA",
+             "destination"=>"New York,NY",
+             "api_key" => ""
+          }
+
+        post '/api/v1/road_trip', headers: headers, params: JSON.generate(params)
+
+        results = JSON.parse(response.body, symbolize_names: true)
+
+        expect(response).to have_http_status(401)
+
+        expect(results).to be_a(Hash)
+        expect(results).to have_key(:status)
+        expect(results[:status]).to eq("UNAUTHORIZED")
+
+        expect(results).to have_key(:message)
+        expect(results[:message]).to eq("")
+
+        expect(results).to have_key(:data)
+        expect(results[:data]).to eq({})
       end
     end
 
     it 'returns an error if API key does not match' do
       VCR.use_cassette('invalid-key') do
+        api_key = ApiKey.create
+        user = User.create!(email: "faker@notreal.net", password: "123ThisIsFake", password_confirmation: "123ThisIsFake", api_key: api_key.access_token )
+        headers = { 'CONTENT_TYPE' => 'application/json' }
+        params = {
+             "origin"=>"Los Angeles,CA",
+             "destination"=>"New York,NY",
+             "api_key" => "29jdbsiahsnofu873imal"
+          }
+
+        post '/api/v1/road_trip', headers: headers, params: JSON.generate(params)
+
+        results = JSON.parse(response.body, symbolize_names: true)
+
+        expect(response).to have_http_status(401)
+
+        expect(results).to be_a(Hash)
+        expect(results).to have_key(:status)
+        expect(results[:status]).to eq("UNAUTHORIZED")
+
+        expect(results).to have_key(:message)
+        expect(results[:message]).to eq("")
+
+        expect(results).to have_key(:data)
+        expect(results[:data]).to eq({})
       end
     end
   end
