@@ -3,7 +3,6 @@ class Api::V1::UsersController < ApplicationController
 
   def create
     user = User.create(user_params)
-
     if user.save
       user.generate_api_key
       json_response(UserSerializer.new(user), :created)
@@ -13,7 +12,6 @@ class Api::V1::UsersController < ApplicationController
   end
 
   private
-  #in headers, 'Authorization: Token token=apikey'
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation)
   end
