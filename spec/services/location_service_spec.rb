@@ -43,14 +43,14 @@ RSpec.describe LocationService do
           finish = "Los Angeles,CA"
 
           query = LocationService.new
-          results = query.roadtrip(start, finish)
+          result = query.roadtrip(start, finish)
 
-          xpect(result).to be_a(Hash)
+          expect(result).to be_a(Hash)
           expect(result).to have_key(:route)
           expect(result[:route]).to be_a(Hash)
 
-          route = result[:results]
-
+          route = result[:route]
+          # require "pry"; binding.pry
           expect(route).to have_key(:formattedTime)
           expect(route[:formattedTime]).to be_a(String)
 
@@ -58,7 +58,7 @@ RSpec.describe LocationService do
           expect(route[:locations]).to be_a(Array)
           expect(route[:locations].length).to eq(2)
 
-          location = results[:locations].first
+          location = route[:locations].first
 
           expect(location).to have_key(:adminArea5)
           expect(location[:adminArea5]).to be_a(String)
@@ -77,7 +77,7 @@ RSpec.describe LocationService do
           expect(lat_long).to have_key(:lng)
           expect(lat_long[:lng]).to be_a(Float)
 
-          location = results[:locations].second
+          location = route[:locations].second
 
           expect(location).to have_key(:adminArea5)
           expect(location[:adminArea5]).to be_a(String)

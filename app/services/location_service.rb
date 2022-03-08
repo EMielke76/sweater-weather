@@ -5,6 +5,11 @@ class LocationService
     body = parse_json(response)
   end
 
+  def roadtrip(start, finish)
+    response = conn.get("directions/v2/route?from=#{start}&to=#{finish}")
+    body = parse_json(response)
+  end
+
   private
   def conn
     Faraday.new(url: "http://www.mapquestapi.com") do |faraday|
