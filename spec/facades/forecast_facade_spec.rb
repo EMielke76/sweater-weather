@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe ForecastFacade do
-  context 'instance methods' do
-    describe '#forecast' do
+  context 'class methods' do
+    describe '::forecast' do
       it 'returns Forecast data', :vcr do
         lat = 39.738453
         long = -104.984853

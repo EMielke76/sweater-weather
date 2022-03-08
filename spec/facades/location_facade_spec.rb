@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe LocationFacade do
-  context 'instance methods' do
-    describe '#get_lat_long' do
+  context 'class methods' do
+    describe '::get_lat_long' do
       it 'returns GeoLocation data', :vcr do
         location = "Denver,CO"
         results = LocationFacade.get_lat_long(location)
@@ -11,7 +11,7 @@ RSpec.describe LocationFacade do
       end
     end
 
-    describe '#roadtrip' do
+    describe '::roadtrip' do
       context 'successful trip' do
         it 'returns Roadtrip data', :vcr do
           start = "New York,NY"
