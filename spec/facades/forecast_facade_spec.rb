@@ -6,8 +6,7 @@ RSpec.describe ForecastFacade do
       it 'returns Forecast data', :vcr do
         lat = 39.738453
         long = -104.984853
-        query = ForecastFacade.new
-        results = query.forecast(lat, long)
+        results = ForecastFacade.forecast(lat, long)
 
         expect(results).to be_a(Forecast)
         expect(results.current_weather).to be_a(CurrentWeather)
@@ -30,13 +29,12 @@ RSpec.describe ForecastFacade do
       it 'returns HouryWeather data', :vcr do
         lat = 34.052223
         long = -118.243355
-        query = ForecastFacade.new
-        results = query.roadtrip(lat, long)
+        results = ForecastFacade.roadtrip(lat, long)
 
         expect(results).to be_a(Array)
         results.each do |result|
           expect(result).to be_a(HourlyWeather)
-        end 
+        end
       end
     end
   end

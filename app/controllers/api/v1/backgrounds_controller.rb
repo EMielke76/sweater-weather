@@ -7,6 +7,6 @@ class Api::V1::BackgroundsController < ApplicationController
 
   private
   def get_image
-    @image = BackgroundFacade.new.get_image(params[:location])
+    @image = BackgroundFacade.get_image(params[:location])
   end
 end
