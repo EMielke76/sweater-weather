@@ -1,4 +1,5 @@
 class Api::V1::RoadTripController < ApplicationController
+  before_action :restrict_access, only: [:create]
 
   def create
     adventure = LocationFacade.new.roadtrip(params[:origin], params[:destination])
