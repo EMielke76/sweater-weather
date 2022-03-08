@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 07 Mar 2022 01:04:02 GMT
+      - Tue, 08 Mar 2022 18:56:54 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -29,43 +29,46 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - 6e7f6a2fc91dc7d9-DEN
-      Access-Control-Allow-Origin:
-      - "*"
+      - 6e8dcb1f9c9cc7d9-DEN
       Cache-Control:
       - max-age=0, private, must-revalidate
-      Etag:
-      - W/"20113bc2d34c2d381856e4dd52ce7724"
       Set-Cookie:
-      - __cf_bm=w1Dk4fjLipPK1qdPxSOG.rhEBJRdnnFcgBmgEAXn3YU-1646615042-0-AfwVoqn3lMXLKhZYh8xhCNzLy9YUST91OD/3gUsE+pTk40qkBOgffgeYQlIPh+i09Hf443Ez5N2LlYdR1uU36Do=;
-        path=/; expires=Mon, 07-Mar-22 01:34:02 GMT; domain=.pexels.com; HttpOnly;
+      - __cf_bm=IVy2KekYls9Y5madh8DZA2mK3Seif5OuxGTd1sj48Pw-1646765814-0-AWFZGCCKIowDkxwHFDeGEXla00HFS5yIIi9oY34/Qrf6X0Gdwe+UsDFC4J1p0JYZI1zRZ9fxdX7Uq4b6FnYBm2s=;
+        path=/; expires=Tue, 08-Mar-22 19:26:54 GMT; domain=.pexels.com; HttpOnly;
         Secure; SameSite=None
-      - _mkra_stck=mysql%3A1646615047.8613415; path=/; max-age=10; expires=Mon, 07
-        Mar 2022 01:04:12 GMT; HttpOnly
+      - __cf_bm=tPR._7WwC0P5cia_khR67NFqmYOnQhharz45l7q4TxQ-1646765814-0-AYZacj4KeB50JjzysoxE/6G7valBD8HnJtZ3HcGWyQl/IfIZXPQ0tfhY6c1nE/87KG+thDe76gX79+Yre/zfrMI=;
+        path=/; expires=Tue, 08-Mar-22 19:26:54 GMT; domain=.pexels.com; HttpOnly;
+        Secure; SameSite=None
+      - _mkra_stck=mysql%3A1646765819.0996108; path=/; max-age=10; expires=Tue, 08
+        Mar 2022 18:57:04 GMT; HttpOnly
+      Vary:
+      - Origin, Accept-Encoding
       Cf-Cache-Status:
       - DYNAMIC
+      Alt-Svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
       Expect-Ct:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       X-Frame-Options:
       - SAMEORIGIN
-      X-Ratelimit-Remaining:
+      X-Ratelimit-Limit:
       - '20000'
+      X-Ratelimit-Remaining:
+      - '19993'
+      X-Ratelimit-Reset:
+      - '1649129028'
       X-Request-Id:
-      - 5ed33543-b36b-4ee4-9427-02d9022c39e4
+      - ff2dd3d1-82ee-498a-b0c2-600cd1cad23f
       X-Runtime:
-      - '0.154841'
+      - '0.301188'
       X-Server:
       - alpaca
-      Vary:
-      - Accept-Encoding
       Server:
       - cloudflare
-      Alt-Svc:
-      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
-      string: '{"page":1,"per_page":1,"photos":[{"id":3751010,"width":3712,"height":5568,"url":"https://www.pexels.com/photo/red-and-white-concrete-building-during-night-time-3751010/","photographer":"Colin
-        Lloyd","photographer_url":"https://www.pexels.com/@colin-lloyd-2120291","photographer_id":2120291,"avg_color":"#5A4741","src":{"original":"https://images.pexels.com/photos/3751010/pexels-photo-3751010.jpeg","large2x":"https://images.pexels.com/photos/3751010/pexels-photo-3751010.jpeg?auto=compress\u0026cs=tinysrgb\u0026dpr=2\u0026h=650\u0026w=940","large":"https://images.pexels.com/photos/3751010/pexels-photo-3751010.jpeg?auto=compress\u0026cs=tinysrgb\u0026h=650\u0026w=940","medium":"https://images.pexels.com/photos/3751010/pexels-photo-3751010.jpeg?auto=compress\u0026cs=tinysrgb\u0026h=350","small":"https://images.pexels.com/photos/3751010/pexels-photo-3751010.jpeg?auto=compress\u0026cs=tinysrgb\u0026h=130","portrait":"https://images.pexels.com/photos/3751010/pexels-photo-3751010.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=1200\u0026w=800","landscape":"https://images.pexels.com/photos/3751010/pexels-photo-3751010.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200","tiny":"https://images.pexels.com/photos/3751010/pexels-photo-3751010.jpeg?auto=compress\u0026cs=tinysrgb\u0026dpr=1\u0026fit=crop\u0026h=200\u0026w=280"},"alt":"Red
-        and White Concrete Building during Night Time"}],"total_results":8000,"next_page":"https://api.pexels.com/v1/search/?page=2\u0026per_page=1\u0026query=City+of+Denver%2CCO"}'
-  recorded_at: Mon, 07 Mar 2022 01:04:02 GMT
+      string: '{"page":1,"per_page":1,"photos":[{"id":3943882,"width":5669,"height":3779,"url":"https://www.pexels.com/photo/woman-sitting-on-luggage-3943882/","photographer":"Anna
+        Shvets","photographer_url":"https://www.pexels.com/@shvetsa","photographer_id":1984515,"avg_color":"#505142","src":{"original":"https://images.pexels.com/photos/3943882/pexels-photo-3943882.jpeg","large2x":"https://images.pexels.com/photos/3943882/pexels-photo-3943882.jpeg?auto=compress\u0026cs=tinysrgb\u0026dpr=2\u0026h=650\u0026w=940","large":"https://images.pexels.com/photos/3943882/pexels-photo-3943882.jpeg?auto=compress\u0026cs=tinysrgb\u0026h=650\u0026w=940","medium":"https://images.pexels.com/photos/3943882/pexels-photo-3943882.jpeg?auto=compress\u0026cs=tinysrgb\u0026h=350","small":"https://images.pexels.com/photos/3943882/pexels-photo-3943882.jpeg?auto=compress\u0026cs=tinysrgb\u0026h=130","portrait":"https://images.pexels.com/photos/3943882/pexels-photo-3943882.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=1200\u0026w=800","landscape":"https://images.pexels.com/photos/3943882/pexels-photo-3943882.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200","tiny":"https://images.pexels.com/photos/3943882/pexels-photo-3943882.jpeg?auto=compress\u0026cs=tinysrgb\u0026dpr=1\u0026fit=crop\u0026h=200\u0026w=280"},"liked":false,"alt":"Woman
+        Sitting on Luggage"}],"total_results":8000,"next_page":"https://api.pexels.com/v1/search/?page=2\u0026per_page=1\u0026query=City+of+Denver%2CCO"}'
+  recorded_at: Tue, 08 Mar 2022 18:56:54 GMT
 recorded_with: VCR 6.0.0

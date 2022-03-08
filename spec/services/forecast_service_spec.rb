@@ -53,5 +53,40 @@ RSpec.describe ForecastService do
         end
       end
     end
+
+    context '#roadtrip' do
+      it 'returns hourly weather data on a location' do
+        VCR.use_cassette('LA-48hrs') do
+          lat = 34.052223
+          long = -118.243355
+
+          query = ForecastService.new
+          result = query.roadtrip(lat, long)
+
+          expect(result).to be_a(Hash)
+          expect(result).to have_key(:timezone)
+          expect(result[:timezone]).to eq("America/Los_Angeles")
+
+          expect(result).to have_key(:hourly)
+          expect(result[:hourly]).to be_a(Array)
+
+          hourly = result[:hourly].first
+
+          expect(hourly).to have_key(:dt)
+          expect(hourly[:dt]).to be_a(Integer)
+
+          expect(hourly).to have_key(:temp)
+          expect(hourly[:temp]).to be_a(Float)
+
+          expect(hourly).to have_key(:weather)
+          expect(hourly[:weather]).to be_a(Array)
+
+          weather = hourly[:weather].first
+
+          expect(weather).to have_key(:description)
+          expect(weather[:description]).to be_a(String)
+        end
+      end
+    end
   end
 end

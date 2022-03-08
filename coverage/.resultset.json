@@ -33,8 +33,14 @@
           null,
           null,
           1,
-          1,
           2,
+          96,
+          null,
+          null,
+          null,
+          1,
+          1,
+          4,
           null,
           null
         ]
@@ -48,8 +54,17 @@
           null,
           null,
           1,
-          1,
+          4,
+          4,
           2,
+          null,
+          2,
+          null,
+          null,
+          null,
+          1,
+          1,
+          6,
           null,
           null
         ]
@@ -59,10 +74,11 @@
           1,
           1,
           1,
+          null,
           1,
           1,
-          4,
-          4,
+          10,
+          10,
           null,
           null,
           null
@@ -184,10 +200,10 @@
           null,
           null,
           1,
-          18,
-          18,
-          18,
-          18,
+          114,
+          114,
+          114,
+          114,
           null,
           null
         ]
@@ -199,6 +215,25 @@
           null,
           null,
           1,
+          4,
+          4,
+          null,
+          null
+        ]
+      },
+      "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/poros/roadtrip.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          4,
+          4,
+          4,
           4,
           4,
           null,
@@ -237,14 +272,19 @@
           null,
           null,
           1,
-          1,
           3,
           3,
-          null,
           null,
           null,
           1,
-          3,
+          1,
+          6,
+          6,
+          null,
+          null,
+          null,
+          1,
+          6,
           null,
           null
         ]
@@ -259,14 +299,19 @@
           null,
           null,
           1,
-          1,
-          3,
-          3,
-          null,
+          5,
+          5,
           null,
           null,
           1,
-          3,
+          1,
+          8,
+          8,
+          null,
+          null,
+          null,
+          1,
+          8,
           null,
           null
         ]
@@ -291,6 +336,7 @@
         "lines": [
           1,
           1,
+          1,
           null
         ]
       },
@@ -298,7 +344,33 @@
         "lines": [
           1,
           1,
+          6,
+          null,
+          null
+        ]
+      },
+      "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/controllers/concerns/param_validations.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          6,
+          6,
+          6,
           4,
+          null,
+          2,
+          null,
+          null,
+          null,
+          1,
+          4,
+          1,
+          3,
+          1,
+          null,
+          2,
+          null,
           null,
           null
         ]
@@ -339,6 +411,77 @@
           null
         ]
       },
+      "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/controllers/api/v1/road_trip_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          2,
+          2,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/serializers/roadtrip_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/serializers/mission_impossible_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/ericmielke/turing/module_3/final/sweater-weather-api/app/controllers/api/v1/sessions_controller.rb": {
         "lines": [
           1,
@@ -376,7 +519,6 @@
           null,
           1,
           5,
-          null,
           5,
           1,
           1,
@@ -386,20 +528,13 @@
           null,
           null,
           1,
-          null,
           1,
           5,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1646693183
+    "timestamp": 1646773081
   }
 }

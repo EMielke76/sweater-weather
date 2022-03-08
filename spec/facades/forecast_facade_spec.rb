@@ -25,5 +25,19 @@ RSpec.describe ForecastFacade do
         end
       end
     end
+
+    describe '#roadtrip' do
+      it 'returns HouryWeather data', :vcr do
+        lat = 34.052223
+        long = -118.243355
+        query = ForecastFacade.new
+        results = query.roadtrip(lat, long)
+
+        expect(results).to be_a(Array)
+        results.each do |result|
+          expect(result).to be_a(HourlyWeather)
+        end 
+      end
+    end
   end
 end
