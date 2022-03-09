@@ -13,6 +13,7 @@ RSpec.describe 'Forecast Endpoint' do
         expect(response).to have_http_status(200)
         expect(results).to have_key(:data)
         expect(results[:data]).to be_a(Hash)
+        expect(results[:data].keys.count).to eq(3)
 
         data = results[:data]
         expect(data).to have_key(:id)
@@ -23,20 +24,28 @@ RSpec.describe 'Forecast Endpoint' do
 
         expect(data).to have_key(:attributes)
         expect(data[:attributes]).to be_a(Hash)
+        expect(data[:attributes].keys.count).to eq(3)
 
         attributes = data[:attributes]
         expect(attributes).to have_key(:current_weather)
         expect(attributes[:current_weather]).to be_a(Hash)
+        expect(attributes[:current_weather].keys.count).to eq(10)
 
         expect(attributes).to have_key(:daily_weather)
         expect(attributes[:daily_weather]).to be_a(Array)
         expect(attributes[:daily_weather].first).to be_a(Hash)
         expect(attributes[:daily_weather].count).to eq(5)
+        attributes[:daily_weather].each do |day|
+          expect(day.keys.count).to eq(7)
+        end
 
         expect(attributes).to have_key(:hourly_weather)
         expect(attributes[:hourly_weather]).to be_a(Array)
         expect(attributes[:hourly_weather].first).to be_a(Hash)
         expect(attributes[:hourly_weather].count).to eq(8)
+        attributes[:hourly_weather].each do |hour|
+          expect(hour.keys.count).to eq(4)
+        end
 
         current_weather = attributes[:current_weather]
         expect(current_weather).to have_key(:datetime)
