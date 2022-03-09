@@ -17,7 +17,7 @@ RSpec.describe 'Create a Road Trip endpoint' do
 
         results = JSON.parse(response.body, symbolize_names: true)
 
-        expect(response).to have_http_status(201)
+        expect(response).to have_http_status(200)
 
         expect(results).to be_a(Hash)
         expect(results).to have_key(:data)
@@ -73,7 +73,7 @@ RSpec.describe 'Create a Road Trip endpoint' do
 
         results = JSON.parse(response.body, symbolize_names: true)
 
-        expect(response).to have_http_status(201)
+        expect(response).to have_http_status(200)
 
         expect(results).to be_a(Hash)
         expect(results).to have_key(:data)
@@ -126,7 +126,7 @@ RSpec.describe 'Create a Road Trip endpoint' do
 
         results = JSON.parse(response.body, symbolize_names: true)
 
-        expect(response).to have_http_status(201)
+        expect(response).to have_http_status(200)
 
         expect(results).to be_a(Hash)
         expect(results).to have_key(:data)
