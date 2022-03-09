@@ -1,4 +1,4 @@
-# [Sweater Weather](https://github.com/emielke76/sweater_weather)
+# [Sweater Weather](https://github.com/EMielke76/sweater_weather)
 
 ## Table of contents
 - [Overview](#overview)
@@ -37,7 +37,7 @@ This project is based off Turing's Sweater Weather project. More details can be 
   ```
 
 ### <ins>Endpoints</ins>
-[Endpoints](https://github.com/emielke76/sweater_weather/blob/main/endpoints.md)
+[Endpoints](https://github.com/EMielke76/sweater-weather/blob/main/endpoints.md)
 
 ### <ins>Technologies</ins>
 
@@ -70,4 +70,4 @@ This project is based off Turing's Sweater Weather project. More details can be 
 - REST
 
 ### <ins>Contributors</ins>
-- [Eric Mielke](https://github.com/emielke76)
+- [Eric Mielke](https://github.com/EMielke76)
