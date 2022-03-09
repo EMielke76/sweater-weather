@@ -1,5 +1,5 @@
-class LocationService < Service 
-
+class LocationService < Service
+  
   def get_lat_long(location)
     response = conn.get("geocoding/v1/address?location=#{location}")
     body = parse_json(response)

@@ -1,5 +1,5 @@
 class ForecastService < Service
-
+  
   def forecast(lat, long)
     response = conn.get("/data/2.5/onecall?lat=#{lat}&lon=#{long}&exclude=minutely,alerts&units=imperial")
     body = parse_json(response)
