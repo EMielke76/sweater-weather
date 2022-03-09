@@ -15,6 +15,7 @@ RSpec.describe 'Background image endpoint' do
         expect(results).to be_a(Hash)
         expect(results).to have_key(:data)
         expect(results[:data]).to be_a(Hash)
+        expect(results[:data].keys.count).to eq(3)
 
         data = results[:data]
 
@@ -26,6 +27,7 @@ RSpec.describe 'Background image endpoint' do
 
         expect(data).to have_key(:attributes)
         expect(data[:attributes]).to be_a(Hash)
+        expect(data[:attributes].keys.count).to eq(3)
 
         attributes = data[:attributes]
 

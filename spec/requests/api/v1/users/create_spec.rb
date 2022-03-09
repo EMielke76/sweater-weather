@@ -95,7 +95,7 @@ RSpec.describe "Registering a user" do
         expect(results[:status]).to eq(400)
 
         expect(results).to have_key(:message)
-        expect(results[:message]).to eq("Email can't be blank")
+        expect(results[:message]).to eq("Email can't be blank and Email is invalid")
 
         expect(results).to have_key(:data)
         expect(results[:data]).to eq({})
@@ -115,7 +115,7 @@ RSpec.describe "Registering a user" do
 
         post "/api/v1/users", headers: headers, params: JSON.generate(params)
         results = JSON.parse(response.body, symbolize_names: true)
-        
+
         expect(response).to have_http_status(400)
 
         expect(results).to have_key(:status)
