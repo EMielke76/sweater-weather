@@ -1,12 +1,8 @@
 class Api::V1::BackgroundsController < ApplicationController
-  before_action :get_image, only: [:index]
+before_action :validate_location, only: [:index]
 
   def index
-    json_response(ImageSerializer.new(@image))
-  end
-
-  private
-  def get_image
-    @image = BackgroundFacade.new.get_image(params[:location])
+    image = BackgroundFacade.get_image(params[:location])
+    json_response(ImageSerializer.new(image))
   end
 end
