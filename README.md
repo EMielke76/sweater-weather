@@ -18,11 +18,11 @@ This project is based off Turing's Sweater Weather project. More details can be 
 1. Fork and Clone the repo
 2. Install gem packages: `bundle install`
 3. Setup the database: `rails db:{drop,create,migrate}`
-4. Run `bundle exec rspec` to test
+4. Run `bundle exec rspec` to run the full test suite.
 
 ### <ins>API Setup</ins>
 1. Sign up for API keys from the following:
-*note* One API key will suffice for both MapQuest endpoints. The liks provided will take you to the respective documentation pages.
+*note* One API key will suffice for both MapQuest endpoints. The links provided will take you to the respective documentation pages.
 - MapQuest Geocoding API [here](https://developer.mapquest.com/documentation/geocoding-api/)
 - MapQuest Directions API [here](https://developer.mapquest.com/documentation/directions-api/)
 - OpenWeather One Call API [here](https://openweathermap.org/api/one-call-api)
@@ -31,13 +31,13 @@ This project is based off Turing's Sweater Weather project. More details can be 
 3. Navigate to /config/application.yml
 4. Paste the following code and replace 'YOUR-API-KEY' with the respective credentials:
   ```
-  MAPQUEST_KEY: 'YOUR-API-KEY'
-  OPEN_WEATHER_KEY: 'YOUR-API-KEY'
-  UNSPLASH_KEY: 'YOUR-API-KEY'
+  mapquest_id: 'YOUR-API-KEY'
+  weather_id: 'YOUR-API-KEY'
+  pexels: 'YOUR-API-KEY'
   ```
 
 ### <ins>Endpoints</ins>
-[Endpoints](https://github.com/EMielke76/sweater-weather/blob/main/endpoints.md)
+Click [here](https://github.com/EMielke76/sweater-weather/blob/main/endpoints.md) for a visual representation of the endpoints and their potential response payloads. 
 
 ### <ins>Technologies</ins>
 
@@ -47,15 +47,16 @@ This project is based off Turing's Sweater Weather project. More details can be 
 
 #### Development tools employed 
 - [Figaro](https://github.com/laserlemon/figaro)
+- [Faraday](https://lostisland.github.io/faraday/)
 - [PostgreSQL](https://www.postgresql.org/)
 - [Postman](https://www.postman.com/)
 - [Ruby on Rails](https://rubyonrails.org/)
-- [Faraday](https://lostisland.github.io/faraday/)
+
 
 #### Languages
 - Ruby
 
-#### Testing
+#### Testing tools
 - [Pry](http://pry.github.io/)
 - [RSPEC](https://rspec.info/)
 - [Shoulda Matchers](https://matchers.shoulda.io/)
