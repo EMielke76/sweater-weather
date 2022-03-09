@@ -21,6 +21,7 @@ RSpec.describe 'Create a Road Trip endpoint' do
 
         expect(results).to be_a(Hash)
         expect(results).to have_key(:data)
+        expect(results.keys.count).to eq(1)
         expect(results[:data]).to be_a(Hash)
         expect(results[:data].keys.count).to eq(3)
 
