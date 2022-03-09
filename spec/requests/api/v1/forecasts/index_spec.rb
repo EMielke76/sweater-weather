@@ -11,6 +11,8 @@ RSpec.describe 'Forecast Endpoint' do
         results = JSON.parse(response.body, symbolize_names: true)
 
         expect(response).to have_http_status(200)
+
+        expect(results.keys.count).to eq(1)
         expect(results).to have_key(:data)
         expect(results[:data]).to be_a(Hash)
         expect(results[:data].keys.count).to eq(3)
@@ -127,6 +129,8 @@ RSpec.describe 'Forecast Endpoint' do
         results = JSON.parse(response.body, symbolize_names: true)
 
         expect(response).to have_http_status(200)
+
+        expect(results.keys.count).to eq(1)
         expect(results).to have_key(:data)
         expect(results[:data]).to be_a(Hash)
 
