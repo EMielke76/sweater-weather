@@ -1,4 +1,4 @@
-# [Sweater Weather](https://github.com/EMielke76/sweater_weather)
+# [Sweater Weather](https://github.com/EMielke76/sweater-weather)
 
 ## Table of contents
 - [Overview](#overview)
