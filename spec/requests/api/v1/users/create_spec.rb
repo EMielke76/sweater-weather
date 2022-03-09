@@ -21,6 +21,7 @@ RSpec.describe "Registering a user" do
         expect(results).to be_a(Hash)
         expect(results).to have_key(:data)
         expect(results[:data]).to be_a(Hash)
+        expect(results[:data].keys.count).to eq(3)
 
         data = results[:data]
         expect(data).to have_key(:type)
@@ -31,6 +32,7 @@ RSpec.describe "Registering a user" do
 
         expect(data).to have_key(:attributes)
         expect(data[:attributes]).to be_a(Hash)
+        expect(data[:attributes].keys.count).to eq(2)
 
         attributes =  data[:attributes]
 
@@ -100,6 +102,33 @@ RSpec.describe "Registering a user" do
       end
     end
 
+    it 'returns an error if email is not an email' do
+      VCR.use_cassette('email-empty') do
+        headers = { 'CONTENT_TYPE' => 'application/json' }
+        params = params = {
+          "user"=> {
+             "email"=>"sakdjoiewhowihr",
+             "password"=>"123Fake",
+             "password_confirmation"=>"123Fake"
+            }
+          }
+
+        post "/api/v1/users", headers: headers, params: JSON.generate(params)
+        results = JSON.parse(response.body, symbolize_names: true)
+        
+        expect(response).to have_http_status(400)
+
+        expect(results).to have_key(:status)
+        expect(results[:status]).to eq(400)
+
+        expect(results).to have_key(:message)
+        expect(results[:message]).to eq("Email is invalid")
+
+        expect(results).to have_key(:data)
+        expect(results[:data]).to eq({})
+      end
+    end
+
     it 'returns an error is passwords do not match' do
       VCR.use_cassette('passwords-do-not-match') do
         headers = { 'CONTENT_TYPE' => 'application/json' }
@@ -127,7 +156,7 @@ RSpec.describe "Registering a user" do
       end
     end
 
-    it 'returns an error if passwords is empty' do
+    it 'returns an error if passwords are empty' do
       VCR.use_cassette('passwords-empty') do
         headers = { 'CONTENT_TYPE' => 'application/json' }
         params = params = {
