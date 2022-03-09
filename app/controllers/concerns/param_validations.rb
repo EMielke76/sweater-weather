@@ -1,5 +1,4 @@
 module ParamValidations
-
   def restrict_access
     key = ApiKey.find_by(access_token: params[:api_key])
     user = User.find_by(api_key: params[:api_key])
@@ -17,12 +16,6 @@ module ParamValidations
       you_didnt_say_the_magic_word("Destination")
     else
       create
-    end
-  end
-
-  def location_validation
-    if params[:location] == ""
-      you_didnt_say_the_magic_word("Location")
     end
   end
 

@@ -1,5 +1,5 @@
 class Api::V1::BackgroundsController < ApplicationController
-  before_action :location_validation, only: [:index]
+before_action :validate_location, only: [:index]
 
   def index
     image = BackgroundFacade.get_image(params[:location])
