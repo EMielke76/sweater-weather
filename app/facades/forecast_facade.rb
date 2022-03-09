@@ -25,9 +25,7 @@ class ForecastFacade
     end
 
     def roadtrip(lat, long)
-      service.roadtrip(lat, long)[:hourly].map do |weather_data|
-        HourlyWeather.new(weather_data)
-      end
+      hourly_weather(service.roadtrip(lat, long)[:hourly])
     end
 
   private
