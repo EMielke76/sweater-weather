@@ -7,7 +7,7 @@ class Api::V1::RoadTripController < ApplicationController
       json_response(MissionImpossibleSerializer.serialize(adventure), :created)
     else
       weather = ForecastFacade.roadtrip(adventure.end_lat, adventure.end_long)
-      json_response(RoadtripSerializer.serialize(adventure, weather), :created)
+      json_response(RoadTripSerializer.serialize(adventure, weather), :created)
     end
   end
 end
