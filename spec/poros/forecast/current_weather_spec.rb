@@ -22,7 +22,7 @@ RSpec.describe CurrentWeather do
   end
 
   it 'has attributes' do
-    expect(weather.datetime).to eq("2022-03-05 11:52:37 -0700")
+    expect(weather.datetime).to eq(Time.at(attributes[:dt]).to_s)
     expect(weather.sunrise).to eq("2022-03-05 06:27:07 -0700")
     expect(weather.sunset).to eq("2022-03-05 17:56:00 -0700")
     expect(weather.temperature).to eq(48.06)

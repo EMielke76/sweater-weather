@@ -19,7 +19,7 @@ RSpec.describe DailyWeather do
 
   it 'has attributes' do
     expect(weather.date).to eq("2022-03-05")
-    expect(weather.sunrise).to eq("2022-03-05 06:27:07 -0700")
+    expect(weather.sunrise).to eq(Time.at(attributes[:sunrise]).to_s)
     expect(weather.sunset).to eq("2022-03-05 17:56:00 -0700")
     expect(weather.max_temp).to eq(123.45)
     expect(weather.min_temp).to eq(1.2345)
