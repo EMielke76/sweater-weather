@@ -1,7 +1,7 @@
 env:
-  map_quest_key: 'Tlozaze717aNRgdqhG8LSe8xRGhN6TQM'
-  weather_key: 'b84b156e4bd181e2ee6502abc67b3257'
-  image_key: 'bbb9a195543278ecbd127c1ab4ac7bdf'
+  mapquest_id: '818M6AL60C8PpeFF9qqpYZhFli9oPvFG'
+  weather_id: '94c09d013aecac9dcbbcf7bbb1131ff4'
+  pexels: '563492ad6f917000010000015db19d868d6e41f8a2ea8fa923a5e2cd'
 
 name: "CI"
 on:
