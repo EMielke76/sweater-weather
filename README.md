@@ -9,6 +9,7 @@
 ## Table of contents
 - [Overview](#overview)
 - [Learning Goals](#learning-goals)
+- [Database Schema](#db-schema)
 - [Setup](#setup)
 - [API Setup](#api-setup)
 - [Endpoints](#endpoints)
@@ -27,6 +28,9 @@ This project is based off Turing's Sweater Weather project. More details can be 
 - Expose an API for CRUD functionality
 - Determine completion criteria based on the needs of other developers
 - Research, select, and consume an API based on your needs as a developer
+
+### <ins>DB Schema</ins>
+![image](https://user-images.githubusercontent.com/81482407/159509785-a8df082d-2fe4-4a32-81a8-a6fd08139452.png)
 
 ### <ins>Setup</ins>
 1. Fork and Clone the repo
