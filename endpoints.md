@@ -1,4 +1,7 @@
- Endpoints
+All endpoints should be prepended with 
+```
+https://localhost:3000
+```
 <hr>
 
 ## Forecast
