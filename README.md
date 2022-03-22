@@ -36,7 +36,6 @@ This project is based off Turing's Sweater Weather project. More details can be 
 1. Fork and Clone the repo
 2. Install gem packages: `$ bundle install`
 3. Setup the database: `$ rails db:{drop,create,migrate}`
-4. Run `$ bundle exec rspec` to run the full test suite.
 
 ### <ins>API Setup</ins>
 1. Sign up for API keys from the following:
@@ -53,7 +52,9 @@ This project is based off Turing's Sweater Weather project. More details can be 
   weather_id: 'YOUR-API-KEY'
   pexels: 'YOUR-API-KEY'
   ```
-5. Open a server with `$ rails s`
+5. Once your api-keys have been set, navigate to `spec/fixtures` and delete the `vcr_cassettes` directory. This directory will autmoatically repopulate with the next step. 
+6. Run `$ bundle exec rspec` to run the full test suite.
+7. Open a server with `$ rails s`
 
 ### <ins>Endpoints</ins>
 Click [here](https://github.com/EMielke76/sweater-weather/blob/main/endpoints.md) for a visual representation of the endpoints and their potential response payloads. 
