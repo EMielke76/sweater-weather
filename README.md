@@ -22,9 +22,9 @@ This project is based off Turing's Sweater Weather project. More details can be 
 
 ### <ins>Setup</ins>
 1. Fork and Clone the repo
-2. Install gem packages: `bundle install`
-3. Setup the database: `rails db:{drop,create,migrate}`
-4. Run `bundle exec rspec` to run the full test suite.
+2. Install gem packages: `$ bundle install`
+3. Setup the database: `$ rails db:{drop,create,migrate}`
+4. Run `$ bundle exec rspec` to run the full test suite.
 
 ### <ins>API Setup</ins>
 1. Sign up for API keys from the following:
@@ -33,7 +33,7 @@ This project is based off Turing's Sweater Weather project. More details can be 
 - MapQuest Directions API [here](https://developer.mapquest.com/documentation/directions-api/)
 - OpenWeather One Call API [here](https://openweathermap.org/api/one-call-api)
 - Pexels [here](https://www.pexels.com/api/)
-2. From the command line, run the following: `bundle exec figaro install`
+2. From the command line, run the following: `$ bundle exec figaro install`
 3. Navigate to /config/application.yml
 4. Paste the following code and replace 'YOUR-API-KEY' with the respective credentials:
   ```
@@ -41,6 +41,7 @@ This project is based off Turing's Sweater Weather project. More details can be 
   weather_id: 'YOUR-API-KEY'
   pexels: 'YOUR-API-KEY'
   ```
+5. Open a server with `$ rails s`
 
 ### <ins>Endpoints</ins>
 Click [here](https://github.com/EMielke76/sweater-weather/blob/main/endpoints.md) for a visual representation of the endpoints and their potential response payloads. 
