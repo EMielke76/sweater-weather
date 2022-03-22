@@ -8,6 +8,7 @@
 
 ## Table of contents
 - [Overview](#overview)
+- [Learning Goals](#learning-goals)
 - [Setup](#setup)
 - [API Setup](#api-setup)
 - [Endpoints](#endpoints)
@@ -19,6 +20,13 @@
 A Backend repository built to consume multiple external API's, aggregate the data, then expose API endpoints to meet the standards and expectations laid out by a ficticious Frontend development team. This reposity was constructed adhering to Service Oriented Architecture best practices. 
 
 This project is based off Turing's Sweater Weather project. More details can be found [here](https://backend.turing.edu/module3/projects/sweater_weather/)
+
+### <ins>Learning Goals</ins>
+- Expose an API that aggregates data from multiple external APIs
+- Expose an API that requires an authentication token
+- Expose an API for CRUD functionality
+- Determine completion criteria based on the needs of other developers
+- Research, select, and consume an API based on your needs as a developer
 
 ### <ins>Setup</ins>
 1. Fork and Clone the repo
